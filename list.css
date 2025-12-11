@@ -1,0 +1,24 @@
+body{
+    text-align: left;
+    background-color: aqua;
+    border-radius: circle;
+
+    }
+h1{
+color: black;
+}
+img{
+    height: 50px;
+    width: 30px;
+    border-radius: 30%;
+    margin: 20px;
+
+}
+h2{
+color: firebrick;
+}
+header{
+text-align: center;
+    
+}
+   
