@@ -19,8 +19,8 @@ const colors_list = [
         id: 2
     },
     {
-        brand: 'ornage',
-        model: 'courage',
+        name: 'ornage',
+        type: 'courage',
         id: 3
     }
 ]
@@ -28,19 +28,26 @@ app.use(cors())
 app.use(express.json())
 
 
-app.get('/products', (req, res) => {
-    res.json({ products_list })
+app.get('/colors', (req, res) => {
+    res.json({ colors_list })
+})
+
+app.get('/green', (req, res) => {
+    res.json({ text: 'Green for happyness' })
+})
+
+app.get('/white', (req, res) => {
+    res.json({ text: 'White for peace' })
+})
+app.get('/orange', (req, res) => {
+    res.json({ text: 'Orange for courage' })
 })
 
 app.post('/submit', (req, res) => {
     console.log(req.body) //req.body.mail
     res.json({
-        message: `You are successfully subscribed ${req.body.mail}!`
+        message: `You are successfully subscribed ${req.body.name}!`
     })
-})
-
-app.get('/videos', (req, res) => {
-    res.json({ text: 'This is videos page' })
 })
 
 app.listen(port, () => {
