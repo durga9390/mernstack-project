@@ -1,6 +1,6 @@
-const Button=({name})=>{
+const Button =({name})=>{
     return(
-        <div>
+        <div> 
             <button>{name}</button>
         </div>
     )
