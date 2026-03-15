@@ -5,6 +5,8 @@ function Colors() {
     const [green, setGreen] = useState('')
     const [white, setWhite] = useState('')
     const [orange, setOrange] = useState('')
+    const [black, setBlack] =useState('')
+    const [brown, setBrown] =useState('')
     const [colors_list, setColors_list] = useState([])
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
@@ -23,6 +25,17 @@ const getOrange = () => {
         fetch('http://localhost:3000/orange')
             .then((response) => response.json())
             .then((jsondata) => setOrange(jsondata.text)) 
+
+    }
+const getBlack = () => {
+        fetch('http://localhost:3000/black')
+            .then((response) => response.json())
+            .then((jsondata) => setBlack(jsondata.text)) 
+    }
+const getBrown = () => {
+        fetch('http://localhost:3000/brown')
+            .then((response) => response.json())
+            .then((jsondata) => setBrown(jsondata.text))
     }
 
     const getColors_list = () => {
@@ -47,26 +60,32 @@ const getOrange = () => {
             .then((data) => setMessage(data.message))
 
         setName('')
+        setid('')
     }
 
     return (
         <div>
             <button onClick={getGreen}>Green</button>
             {green}
-            <hr/>
+            <br/>
             <button onClick={getWhite}>White</button>
             {white}
-            <hr/>
+            <br/>
             <button onClick={getOrange}>Orange</button>
             {orange}
-            <hr/>
+            <br/>
+            <button onClick={getBlack}>Black</button>
+            {black}
+            <br/>
+            <button onClick={getBrown}>Brown</button>
+            {brown}
+            <br>
             <button onClick={getColors_list}>colors</button>
-            <hr />
-
+            </br>
 
             <ol>
                 {colors_list.map(colors_list=> (
-                    <li key={colors_list.id}>{colors_list.type}</li>
+                    <li key={colors_list.id}>{colors_list.sign}</li>
                 ))}
             </ol>
 
@@ -82,7 +101,11 @@ const getOrange = () => {
 
             {message}
         </div>
+
     )
 }
 
-export default Colors;
+      
+            
+
+export default Colors
